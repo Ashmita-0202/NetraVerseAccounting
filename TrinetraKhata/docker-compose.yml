@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  tn.web:
+    image: ${DOCKER_REGISTRY-}tnweb
+    build:
+      context: .
+      dockerfile: TN.Web/Dockerfile

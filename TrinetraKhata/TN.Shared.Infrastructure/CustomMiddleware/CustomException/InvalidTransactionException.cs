@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TN.Shared.Infrastructure.CustomMiddleware.CustomException
+{
+    public class InvalidTransactionException : Exception
+    {
+
+        public InvalidTransactionException()
+        {
+            
+        }
+        public InvalidTransactionException(
+            string message
+            ) : base(message)
+        {
+            
+        }
+
+        public System.Net.HttpStatusCode StatusCode { get; } = System.Net.HttpStatusCode.BadRequest;
+    }
+}

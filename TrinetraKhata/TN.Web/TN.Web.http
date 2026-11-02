@@ -1,0 +1,6 @@
+@TN.Web_HostAddress = http://localhost:5019
+
+GET {{TN.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

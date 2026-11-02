@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FluentValidation;
+
+namespace TN.Shared.Application.Shared.Command.UpdatePurchaseRefNumberByCompany
+{
+    public class UpdatePurchaseReferenceNumberCommandValidator:AbstractValidator<UpdatePurchaseReferenceNumberCommand>
+    {
+        public UpdatePurchaseReferenceNumberCommandValidator()
+        {
+            RuleFor(x => x.companyId)
+              .NotEmpty().WithMessage("CompanyId is required.");
+
+        }
+    }
+}

@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>eb78608a-1703-45bb-b799-6b0ccb59127e</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.2.0" />
+
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.16" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.16" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Scrutor" Version="6.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NV.Payment.Application\NV.Payment.Application.csproj" />
+    <ProjectReference Include="..\NV.Payment.Infrastructure\NV.Payment.Infrastructure.csproj" />
+    <ProjectReference Include="..\TN.Account.Application\TN.Account.Application.csproj" />
+    <ProjectReference Include="..\TN.Account.Infrastructure\TN.Account.Infrastructure.csproj" />
+    <ProjectReference Include="..\TN.Authentication.Application\TN.Authentication.Application.csproj" />
+    <ProjectReference Include="..\TN.Authentication.Infrastructure\TN.Authentication.Infrastructure.csproj" />
+    <ProjectReference Include="..\TN.Inventory.Application\TN.Inventory.Application.csproj" />
+    <ProjectReference Include="..\TN.Inventory.Infrastructure\TN.Inventory.Infrastructure.csproj" />
+    <ProjectReference Include="..\TN.Purchase.Application\TN.Purchase.Application.csproj" />
+    <ProjectReference Include="..\TN.Purchase.Infrastructure\TN.Purchase.Infrastructure.csproj" />
+    <ProjectReference Include="..\Tn.Reports.Application\TN.Reports.Application.csproj" />
+    <ProjectReference Include="..\TN.Reports.Infrastructure\TN.Reports.Infrastructure.csproj" />
+    <ProjectReference Include="..\TN.Sales.Application\TN.Sales.Application.csproj" />
+    <ProjectReference Include="..\TN.Sales.Infrastructure\TN.Sales.Infrastructure.csproj" />
+    <ProjectReference Include="..\TN.Setup.Application\TN.Setup.Application.csproj" />
+    <ProjectReference Include="..\TN.Setup.Infrastructure\TN.Setup.Infrastructure.csproj" />
+    <ProjectReference Include="..\TN.Shared.Application\TN.Shared.Application.csproj" />
+    <ProjectReference Include="..\TN.Shared.Domain\TN.Shared.Domain.csproj" />
+    <ProjectReference Include="..\TN.Shared.Infrastructure\TN.Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\TN.Transactions.Application\TN.Transactions.Application.csproj" />
+    <ProjectReference Include="..\TN.Transactions.Infrastructure\TN.Transactions.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+name: Publish and SSH to Remote Server
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Download plink.exe (PuTTY SSH tool)
+        run: |
+          Invoke-WebRequest -Uri "https://the.earth.li/~sgtatham/putty/latest/w64/plink.exe" -OutFile "plink.exe"
+
+      - name: SSH into remote server and run command
+        run: |
+          .\plink.exe -P 22531 -pw "${{ secrets.SERVER_PASSWORD }}" ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo Connected to remote server && hostname && dir C:\publish"
